@@ -8,6 +8,7 @@ on:
 jobs:
     unit-test:
         container: cuaesd/aesd-autotest:unit-test
+        options: --user root
         runs-on: self-hosted
         steps:
           - uses: actions/checkout@v2
@@ -17,6 +18,7 @@ jobs:
             run: ./unit-test.sh
     full-test:
         container: cuaesd/aesd-autotest:assignment1
+        options: --user root
         runs-on: self-hosted
         steps:
           - uses: actions/checkout@v2
